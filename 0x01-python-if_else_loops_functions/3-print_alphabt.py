@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 for alph in range(97, 123):
-    if alph == 101 or alph == 113:
+    if alph == 113 or alph == 101:
         pass
     else:
-        print(chr(alph), end="")
+        print("{}".format(chr(alph)), end="")
