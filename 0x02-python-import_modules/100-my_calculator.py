@@ -10,13 +10,13 @@ if __name__ == "__main__":
     b = int(argv[3])
     opr = argv[2]
     if opr == '+':
-        print(fmt.format(a, o, b, add(a, b)))
+        print(fmt.format(a, opr, b, add(a, b)))
     elif opr == '-':
-        print(fmt.format(a, o, b, sub(a, b)))
+        print(fmt.format(a, opr, b, sub(a, b)))
     elif opr == '*':
-        print(fmt.format(a, o, b, mul(a, b)))
+        print(fmt.format(a, opr, b, mul(a, b)))
     elif opr == '/':
-        print(fmt.format(a, o, b, div(a, b)))
+        print(fmt.format(a, opr, b, div(a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
