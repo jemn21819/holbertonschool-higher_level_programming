@@ -11,7 +11,7 @@ int is_palindrome(listint_t **head)
 	if (!head || !*head)
 		return (1);
 
-	while(*head != NULL)
+	while(*head)
 	{
 		size++;
 		optns[size - 1] = (*head)->n;
