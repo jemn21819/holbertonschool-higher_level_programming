@@ -57,7 +57,7 @@ class Square:
         Function that print stdout the square
         with character #
         """
-        if self.__size == 0:
+        if self.__size is 0:
             print()
         else:
             print("\n" * self.__position[1], end="")
@@ -72,8 +72,8 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if type(value) != tuple or len(value) != 2 or \
-                any(map(lambda i: type(i) != int or i < 0, value)):
+        if type(value) is not tuple or len(value) is not 2 or \
+                any(map(lambda i: type(i) is not int or i < 0, value)):
                     raise TypeError("position must be a tuple of 2 \
                             positive integers")
         else:
