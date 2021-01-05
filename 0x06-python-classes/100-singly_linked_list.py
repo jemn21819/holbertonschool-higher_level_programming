@@ -40,7 +40,7 @@ class Node:
     def next_node(self, value):
         """ just a setter fuc"""
         if type(value) is not Node and value is not None:
-            raise TypeError("ext_node must be a Node object")
+            raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
 
