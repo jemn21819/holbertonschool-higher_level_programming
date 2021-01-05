@@ -4,6 +4,7 @@ import math
 
 
 class MagicClass:
+    """class that represents a cirlce"""
     def __init__(self, radius=0):
         """Initialize with default radius=0
 
