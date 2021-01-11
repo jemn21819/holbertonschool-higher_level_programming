@@ -39,4 +39,3 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError(err4)
 
     return [[round(element / div, 2) for element in row] for row in matrix]
-
