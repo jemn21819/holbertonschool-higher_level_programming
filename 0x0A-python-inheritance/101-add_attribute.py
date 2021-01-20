@@ -3,6 +3,7 @@
 Module add_attribute
 """
 
+
 def add_attribute(obj, attr, value):
     """Defines function to check whether object support
 dynamic assigment.
