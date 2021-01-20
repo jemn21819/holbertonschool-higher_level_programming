@@ -12,4 +12,4 @@ class MyInt(int):
     def __ne__(self, other):
         """Swaps meaning of `==` with `!=`
         """
-        return super().__eq__(other)i
+        return super().__eq__(other)
