@@ -2,7 +2,8 @@
 
 
 def add_attribute(obj, attr, value):
-    """Defines function to check whether object supports dynamic assigment.
+    """Defines function to check whether object support
+dynamic assigment.
     Args:
         obj: object to check/assign to
         attr (str): name of attribute to assign to `obj`
