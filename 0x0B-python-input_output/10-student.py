@@ -3,9 +3,9 @@
 
 
 class Student:
-    """Class to represent student"""
+    """Class to represent stuendt"""
     def __init__(self, first_name, last_name, age):
-        """Initialize new student"""
+        """initialize new student"""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
@@ -15,7 +15,7 @@ class Student:
         if type(attrs) is list:
             new_dict = {}
             for i in attrs:
-                if type(i) is str and i in self.__dict_.keys():
+                if type(i) is str and i in self.__dict__.keys():
                     new_dict[i] = self.__dict__.get(i)
             return new_dict
         else:
