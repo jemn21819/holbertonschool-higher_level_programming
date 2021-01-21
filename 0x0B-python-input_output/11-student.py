@@ -17,8 +17,14 @@ class Student:
         if type(attrs) is list:
             new_dict = {}
             for i in attrs:
-                if type(i) is str and i in self.__dict_.keys():
-                    new_dict[i] = self.__dict__.get(i)
+                if type(i) is str and i in self.__dict__.keys():
+                    new_dict[x] = self.__dict__.get(i)
             return new_dict
         else:
             return self.__dict__
+
+    def reload_from_json(self, json):
+        """documentation"""
+        list_keys = list(json.keys())
+        for j in list_keys:
+            self.__dict__[j] = json.get(j)
