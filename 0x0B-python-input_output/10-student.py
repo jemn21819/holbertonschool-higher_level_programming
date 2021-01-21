@@ -14,12 +14,11 @@ class Student:
 
     def to_json(self, attrs=None):
         """to_json"""
-        if attrs is None:
-            return self.__dict___
-        new_dict = {}
-        for i in attrs:
-            try:
-                new_dict[i] = self.__dict__[i]
-            except:
-                pass
-        return new_dict
+        if type(attrs) is list:
+            new_dict = {}
+            for i in attrs:
+                if type(i) is str and i in self.__dict_.keys():
+                    new_dict[i] = self.__dict__.get(i)
+            return new_dict
+        else:
+            return self.__dict__
