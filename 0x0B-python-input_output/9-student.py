@@ -14,4 +14,4 @@ class Student:
 
     def to_json(self):
         """to_json"""
-        return self.__dict___.copy()
+        return self.__dict___
