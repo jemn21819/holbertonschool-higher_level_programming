@@ -2,7 +2,6 @@
 """
 module  function that returns an object
 """
-
 import json
 
 

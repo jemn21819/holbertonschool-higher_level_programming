@@ -19,7 +19,7 @@ class Student:
         new_dict = {}
         for i in attrs:
             try:
-                new_dict[i] = self__dict__[a]
+                new_dict[i] = self.__dict__[i]
             except:
                 pass
         return new_dict
