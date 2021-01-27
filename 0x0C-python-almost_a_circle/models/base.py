@@ -13,6 +13,9 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """
+        initialization of the class Base
+        """
         if id is None:
             Base.__nb_objects += 1
             self.id = self.__nb_objects
@@ -21,21 +24,27 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """returns the JSON string representation of list_dictionaries"""
+        """
+        returns the JSON string representation of list_dictionaries
+        """
         if list_dictionaries is None:
             list_dictionaries = []
         return json.dumps(list_dictionaries)
 
     @staticmethod
     def from_json_string(json_string):
-        """returns the list of the JSON string representation json_string"""
+        """
+        returns the list of the JSON string representation json_string
+        """
         if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """writes the JSON string representation of list_objs to a file"""
+        """
+        writes the JSON string representation of list_objs to a file
+        """
         f_name = cls.__name__ + ".json"
         new_list = []
         if list_objs is not None:
@@ -46,7 +55,9 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """returns an instance with all attributes already set"""
+        """
+        returns an instance with all attributes already set
+        """
         if cls.__name__ is "Rectangle":
             dummy = cls(1, 1)
         elif cls.__name__ is "Square":
@@ -56,7 +67,9 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """Load from a file json"""
+        """
+        Load from a file json
+        """
         f_name = cls.__name__ + ".json"
         list_inst = []
         try:
@@ -70,7 +83,9 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """serializes a list of Rectangles/Squares in csv"""
+        """
+        serializes a list of Rectangles/Squares in csv
+        """
         filename = cls.__name__ + ".csv"
         with open(filename, 'w', newline='') as csvfile:
             csv_writer = csv.writer(csvfile)
@@ -84,7 +99,9 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """deserializes a list of Rectangles/Squares in csv"""
+        """
+        deserializes a list of Rectangles/Squares in csv
+        """
         filename = cls.__name__ + ".csv"
         l = []
         try:

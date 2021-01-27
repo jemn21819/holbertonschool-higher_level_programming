@@ -9,13 +9,15 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """class Square"""
     def __init__(self, size, x=0, y=0, id=None):
-        """initialization of square"""
+        """
+        initialization of square
+        """
         super().__init__(size, size, x, y, id)
         self.size = size
 
     @property
     def size(self):
-        """ getter size"""
+        """getter size"""
         return self.width
 
     @size.setter
@@ -25,12 +27,16 @@ class Square(Rectangle):
         self.height = value
 
     def __str__(self):
-        """informal string of square representation"""
+        """
+        informal string of square representation
+        """
         return ("[Square] ({:d}) {:d}/{:d} - {:d}".format(
             self.id, self.x, self.y, self.width))
 
     def update(self, *args, **kwargs):
-        """update assing attributes"""
+        """
+        func to update assing attributes
+        """
         if len(args):
             for i, j in enumerate(args):
                 if i == 0:
@@ -52,7 +58,9 @@ class Square(Rectangle):
                 self.y = kwargs["y"]
 
     def to_dictionary(self):
-        """Dictionary representation"""
+        """
+        Func to Dictionary representation
+        """
         dict_rep = {}
         dict_rep["id"] = self.id
         dict_rep["size"] = self.size

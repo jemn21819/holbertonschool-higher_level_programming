@@ -9,7 +9,9 @@ from models.base import Base
 class Rectangle(Base):
     """ class Rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ Imiticalize rectangle"""
+        """
+        Initicalize rectangle
+        """
         self.width = width
         self.height = height
         self.x = x
@@ -64,6 +66,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
+        """Setter for the y"""
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -71,21 +74,30 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """return area of rectngle"""
+        """
+        func to return area of rectngle
+        """
         return self.__width * self.__height
 
     def display(self):
-        """print on stdout a rectangle"""
+        """
+        func to print on stdout a rectangle
+        """
         print(("\n" * self.__y) +
               "\n".join(((" " * self.__x) + ("#" * self.__width))
                         for i in range(self.__height)))
 
     def __str__(self):
-        """override str"""
+        """
+        func to override return a  str
+        """
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
+        """
+        func update taht update a dict of kwargs
+        """
         if len(args):
             for i, j in enumerate(args):
                 if i == 0:
@@ -111,7 +123,9 @@ class Rectangle(Base):
                 self.y = kwargs["y"]
 
     def to_dictionary(self):
-        """dictionary represemtation"""
+        """
+        function to a dictionary represemtation
+        """
         dict_rep = {}
         dict_rep["id"] = self.id
         dict_rep["width"] = self.width
