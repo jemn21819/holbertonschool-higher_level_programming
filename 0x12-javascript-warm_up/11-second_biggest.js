@@ -1,6 +1,6 @@
 #!/usr/bin/node
 let secBig = 0;
-let numList = process.argv.slice(2);
+const numList = process.argv.slice(2);
 if (numList.length > 1) {
   numList.sort();
   secBig = numList[numList.length - 2];
