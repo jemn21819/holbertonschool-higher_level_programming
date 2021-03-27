@@ -17,6 +17,6 @@ if __name__ == "__main__":
     cursor.execute("SELECT cities.name FROM cities \
     JOIN states ON cities.state_id = states.id WHERE states.name=%s \
     ORDER BY cities.id ASC", (argv[4],))
-    print(", ".join(city[0] form city in cursor.fetchall()))
+    print(", ".join(city[0] for city in cursor.fetchall()))
     cursor.close()
     dbConnect.close()
