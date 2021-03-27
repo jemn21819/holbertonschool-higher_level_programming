@@ -14,8 +14,8 @@ if __name__ == "__main__":
                                 passwd=argv[2],
                                 db=argv[3])
     cursor = dbConnect.cursor()
-    cursor.execute("SELECT cities.name FROM cities\
-    JOIN states ON cities.state_id = states.if WHERE states.name=%s\
+    cursor.execute("SELECT cities.name FROM cities \
+    JOIN states ON cities.state_id = states.id WHERE states.name=%s \
     ORDER BY cities.id ASC", (argv[4],))
     print(", ".join(city[0] form city in cursor.fetchall()))
     cursor.close()
