@@ -19,6 +19,7 @@ if __name__ == "__main__":
             State).order_by(State.id).filter(State.name.like(argv[4])):
         if state.id:
             print("{}".format(state.id))
-        else:
-            print("Not found")
+            break
+    else:
+        print("Not found")
     session.close()
