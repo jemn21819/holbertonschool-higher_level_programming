@@ -15,7 +15,8 @@ if __name__ == "__main__":
         argv[1], argv[2], 'localhost', 3306, argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
-    for state in session.query(State.id).filter(State.name.like('%a%')):
+    for state in session.query(
+            State)order_by(State.id).filter(State.name.like('%a%')):
         if state:
             print("{}: {}".format(state.id, state.name))
         else:
