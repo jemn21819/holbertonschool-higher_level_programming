@@ -13,7 +13,11 @@ if __name__ == "__main__":
 
     engine = create_engine('mysql://{}:{}@{}:{}/{}'.format(
         argv[1], argv[2], 'localhost', 3306, argv[3]))
-    session = sessionmaker(engine)().query(State).order_by(State.id)
-    for state in session:
+    Session = sessionmaker(bind=engine)
+    session.Session()
+    state = session.query(State).order_by(State.id).first()
+    if state is not None:
         print("{}: {}".format(state.id, state.name))
+    else:
+        print("Nothing")
     session.close()
