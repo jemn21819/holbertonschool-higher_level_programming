@@ -14,7 +14,7 @@ if __name__ == "__main__":
     engine = create_engine('mysql://{}:{}@{}:{}/{}'.format(
         argv[1], argv[2], 'localhost', 3306, argv[3]))
     Session = sessionmaker(bind=engine)
-    session.Session()
+    session = Session()
     state = session.query(State).order_by(State.id).first()
     if state:
         print("{}: {}".format(state.id, state.name))
