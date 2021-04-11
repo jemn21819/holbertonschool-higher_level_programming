@@ -15,6 +15,6 @@ if __name__ == "__main__":
         if res_dic == {}:
             print("No result")
         else:
-            print("[{}] {}".format(r_dict.get('id'), r_dict.get('name')))
+            print("[{}] {}".format(res_dic.get('id'), res_dic.get('name')))
     except:
         print("Not a valid JSON")
